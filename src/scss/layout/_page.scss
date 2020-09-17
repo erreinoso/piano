@@ -1,0 +1,131 @@
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(180, 218, 243);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// para que funcione con el cursor
+.piano-board {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(165, 77, 42);
+  width: 500px;
+  height: 175px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .piano-tone {
+    position: relative;
+    background: #fdfcf7;
+    width: 35px;
+    height: 130px;
+    border: 1px solid #866e66;
+    box-shadow: inset 0px 3px 0px 6px #f4f4ec;
+  }
+  .piano-tone:hover {
+    cursor: pointer;
+    animation-name: downTone;
+    animation-duration: 0.5s;
+  }
+  .piano-tone::after {
+    content: ' ';
+    width: 35px;
+    height: 20px;
+    background: #e3e4e2;
+    box-shadow: inset 1px 3px 0px 0px #acacac;
+    display: block;
+    position: absolute;
+    top: 100%;
+    border: 1px solid #866e66;
+    margin-left: -1px;
+  }
+
+  .piano-tone:hover::after {
+    animation-name: downToneAfter;
+    animation-duration: 0.5s;
+  }
+  .piano-semitone {
+    &C {
+      transform: translate(-93px);
+    }
+    &D {
+      transform: translate(-55px);
+    }
+    &F {
+      transform: translate(18px);
+    }
+    &G {
+      transform: translate(55px);
+    }
+    &A {
+      transform: translate(92px);
+    }
+  }
+}
+
+.piano-semitone {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 86px;
+  background: #1b130e;
+  box-shadow: inset 1px 5px 8px 1px #7e776c;
+  z-index: 1;
+  border: 1px solid #09040c;
+  &::after {
+    content: '';
+    width: 12px;
+    height: 5px;
+    background: #1b130e;
+    box-shadow: inset 1px 5px 8px 1px #7e776c;
+    display: block;
+    position: absolute;
+    top: 100%;
+    border: 1px solid #09040c;
+    margin-left: -1px;
+  }
+  &:hover {
+    height: 90px;
+  }
+}
+
+.piano-semitone:hover::after {
+  height: 2px;
+}
+
+// para que funcione con el keydown
+
+.piano-board .piano-tone-down {
+  animation-name: downTone;
+  animation-duration: 0.3s;
+}
+
+@keyframes downTone {
+  from {
+    height: 130px;
+    box-shadow: inset 0px 3px 0px 6px #f4f4ec;
+  }
+  to {
+    height: 140px;
+    // box-shadow: inset 1px -3px 1px 0px #4c4d48a;
+  }
+}
+@keyframes downToneAfter {
+  from {
+    height: 20px;
+    box-shadow: inset 0px 3px 0px 6px #f4f4ec;
+  }
+  to {
+    height: 10px;
+    // box-shadow: inset 1px -3px 1px 0px #4c4d48;
+  }
+}
