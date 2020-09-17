@@ -1,0 +1,1 @@
+"use strict";function playNote(e){const o=document.querySelector(`.piano-tone[data-key="${e.keyCode}"]`),t=document.querySelector(`audio[data-key="${e.keyCode}"]`);t&&(t.currentTime=0,t.play(),o.classList.add("piano-tone-down"),console.log("playnote key",o),setTimeout(()=>{o.classList.remove("piano-tone-down")},500))}window.addEventListener("keydown",playNote);
