@@ -24,9 +24,11 @@ You can also use your mouse.
 
 - Animations
 
-- Understand how to manipulate the DOM of a page and respond to user events.
+- Understand how to manipulate the DOM of a page and respond to user events
 
-- Using audio files
+- Using audio files and modes
+
+- Creating a button to handdle styles
 
 ## Tools 💻
 
