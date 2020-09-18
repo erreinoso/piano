@@ -1,0 +1,50 @@
+//Switch styles
+
+.btnBox {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(60);
+
+  .switch {
+    cursor: pointer;
+    background-color: $color-box-shadow-dark;
+    border-radius: rem(20);
+    width: rem(70);
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    outline: none;
+    position: absolute; //
+    &::after {
+      content: '';
+      display: block;
+      width: rem(35);
+      height: rem(35);
+      position: absolute;
+      background: $color-secondary-background;
+      top: 0;
+      left: 0;
+      right: unset;
+      border-radius: rem(100);
+      transition: 0.3s ease all;
+      box-shadow: 0px 0px rem(2) rem(2) $color-tertiatry-background;
+    }
+    &.active {
+      background: $color-toggle;
+      &::after {
+        right: 0;
+        left: unset;
+      }
+    }
+    span {
+      width: rem(30);
+      height: rem(35);
+      line-height: rem(35);
+      font-size: rem(20);
+      display: block;
+    }
+  }
+}
+.dark {
+  background-color: $color-tertiatry-background;
+}

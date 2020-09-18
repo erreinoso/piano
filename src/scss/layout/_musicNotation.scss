@@ -1,0 +1,9 @@
+.helpChoices {
+  margin: rem(40);
+  display: grid;
+  justify-content: center;
+
+  @include desktop {
+    top: rem(60);
+  }
+}

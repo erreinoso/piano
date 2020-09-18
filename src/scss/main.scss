@@ -1,4 +1,9 @@
+@import 'core/reset';
 @import 'core/functions';
 @import 'core/variables';
 @import 'core/mixins';
 @import 'layout/page';
+@import 'layout/piano';
+@import 'layout/musicNotation';
+@import 'layout/switchStyles';
+@import 'pages/index';
