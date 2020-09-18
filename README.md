@@ -16,6 +16,8 @@ B - Si<br>
 
 You can also use your mouse.
 
+![gif of piano being played](https://github.com/erreinoso/piano/blob/master/pianoplay.gif)
+
 ## Learnings 💡
 
 - CSS
