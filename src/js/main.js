@@ -3,7 +3,7 @@ const nohelp = document.querySelector('.help1');
 console.log(nohelp);
 const alphabetical = document.querySelector('.help2');
 const syllabic = document.querySelector('.help3');
-
+const btnSwitch = document.querySelector('.switch');
 //function that add animation and sound
 function playNote(ev) {
   let code = '';
@@ -73,3 +73,12 @@ for (let i = 0, note; (note = scale[i]); i++) {
 nohelp.addEventListener('change', removeHelp);
 alphabetical.addEventListener('change', addHelpAlphabetical);
 syllabic.addEventListener('change', addHelpSyllabical);
+
+//switch day night
+btnSwitch.addEventListener('click', changeMode);
+
+function changeMode() {
+  const html = document.querySelector('html');
+  html.classList.toggle('dark');
+  btnSwitch.classList.toggle('active');
+}
